@@ -1,0 +1,49 @@
+using System;
+using System.Linq;
+using System.Numerics;
+using System.Text;
+using System.Collections.Generic;
+using System.Collections;
+
+
+namespace AssociativeArrays
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+            List<string> users = Console.ReadLine().Split(", ", StringSplitOptions.RemoveEmptyEntries).ToList();
+
+            foreach (var item in users)
+            {
+
+                if (item.Length < 3 || item.Length > 16)
+                {
+                    continue;
+                }
+                else
+                {
+                    for (int i = 0; i < item.Length; i++)
+                    {
+                        if (!char.IsLetterOrDigit(item[i]) && item[i] != '_' && item[i] != '-')
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            if (i == item.Length - 1)
+                            {
+                                Console.WriteLine(item);
+                            }
+                        }
+                    }
+                }
+                
+                
+            }
+            
+        }
+    }
+}
